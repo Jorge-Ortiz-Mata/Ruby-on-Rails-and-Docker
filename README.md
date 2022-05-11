@@ -1,24 +1,45 @@
-# README
+# Ruby on Rails and Docker.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application was built using dockers conainers, Ruby and PostgreSQL.
+All the information is placed in the Dockerfile and docker-compose.yml file.
 
-Things you may want to cover:
+For more information, you can visit: https://docs.docker.com/samples/rails/
 
-* Ruby version
+## Set up.
 
-* System dependencies
+* Create the Rails applcation with PostgreSQL: `rails new docker-rails-app -d=posgresql`.
+* Create the Dockerfile and add all the commands in order to create the container.
+* Create the docker-compose file to create the servers for Rails and for PostgreSQL.
+* Build the project: `docker-compose run --no-deps web rails new . --force --database=postgresql`.
+* Build the image: `docker compose build`.
+* Go to config/database.yml and change the default configuration by adding the username and password for PostgreSQL.
+* Boot the app by typping: `docker compose up`.
 
-* Configuration
+![](app/assets/images/rails-yeah.png).
 
-* Database creation
+## Run commands inside of the container.
 
-* Database initialization
+In order to run rails commands inside of the web container, we can do it by adding the following commands:
 
-* How to run the test suite
+* In order to run rails db:create: `docker compose run web rails db:create db:migrate`.
+* In order to run rails db:seed: `docker compose run web rails db:seed`.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Softwares and frameworks.
 
-* Deployment instructions
+* Docker image Ruby: 2.7.6 
+* Ruby on Rails: 6.1.5.1
+* Docker image PostgreSQL: 12.10
+* VSCode.
+* Windows 10(WSL 2, Linux).
 
-* ...
+## Author:
+
+* Jorge Ortiz Mata.
+* San Luis Potosí S.L.P. México
+* ortiz.mata.jorge@gmail.com
+* +52 (444) 576 3034.
+
+
+
+
+
