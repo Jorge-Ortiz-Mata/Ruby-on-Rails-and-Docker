@@ -1,1 +1,8 @@
 <h1>Hello World</h1>
+<% @articles.each do |article| %>
+  <p>
+    <%= article.title %>
+    <%= article.description %>
+    <%= article.price %>
+  </p>
+<% end %>
