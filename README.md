@@ -10,6 +10,7 @@ For more information, you can visit: https://docs.docker.com/samples/rails/
 * Create the Rails applcation with PostgreSQL: `rails new docker-rails-app -d=posgresql`.
 * Create the Dockerfile and add all the commands in order to create the container.
 * Create the docker-compose file to create the servers for Rails and for PostgreSQL.
+* Create the entrypoin.sh file in the root path of the project.
 * Build the project: `docker-compose run --no-deps web rails new . --force --database=postgresql`.
 * Build the image: `docker compose build`.
 * Go to config/database.yml and change the default configuration by adding the username and password for PostgreSQL.
